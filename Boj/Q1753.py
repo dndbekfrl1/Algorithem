@@ -1,4 +1,5 @@
 # bfs -> time exceed code
+# reason why using heap -> in heap, there are always shortest weight node
 '''
 import sys
 from collections import deque
