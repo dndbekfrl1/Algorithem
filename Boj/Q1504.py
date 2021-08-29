@@ -9,7 +9,6 @@ def djikstra(start):
     heappush(heap,(0,start))
     while heap:
         weight,cur = heappop(heap)
-
         for next_node, next_weight in graph[cur]:
             w = next_weight + weight
             if dp[next_node]>w:
@@ -32,13 +31,11 @@ start = djikstra(1)
 v1_ = djikstra(v1)
 v2_ = djikstra(v2)
 
-
-
 # 1-> v1 -> v2 -> n
 # 1-> v2 -> v1 -> n
 
 res = min(start[v1]+v1_[v2]+v2_[n], start[v2]+v2_[v1]+v1_[n])
-if res == inf: res=-1
+if res >= inf: res=-1
 print(res)
 
 #graph[1] = [(2,3),(3,3)]
